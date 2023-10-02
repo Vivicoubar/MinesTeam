@@ -1,0 +1,4 @@
+name: MinesTeam
+version: '${project.version}'
+main: fr.vivicoubar.minesteam.MinesTeam
+api-version: '1.20'
