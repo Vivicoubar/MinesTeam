@@ -11,6 +11,7 @@ public class Team {
     ArrayList<Player> playerList = new ArrayList<>();
     Player leader;
     ArrayList<Player> secondList = new ArrayList<>(); // Liste des seconds d'équipe
+    ArrayList<Player> invitedList = new ArrayList<>(); // Liste des personnes invitées
 
     public Team(String name, Player leader) {
         this.name = name;
