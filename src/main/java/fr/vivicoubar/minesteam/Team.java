@@ -36,7 +36,7 @@ public class Team {
     }
 
     /**
-     * makes the player "player" a second of
+     * makes the player "player" a second of the team
      *
      * @param sender asking to put player as a second
      * @param player going (or not) to be a second

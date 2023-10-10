@@ -35,5 +35,5 @@ public class TeamManager {
   public static void addTeam(Team team) {
     teams.add(team);
   }
-
+  
 }
