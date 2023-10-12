@@ -86,7 +86,7 @@ public class CmdManager {
 
     public static boolean teaminvite(CommandSender sender, Command command, String label, String[] args) {
 
-        if (args.length < 2) { // Pas assez d'arguments rentrés
+        if (args.length != 2) { // Nombre d'arguments rentrés incorrect
             sender.sendMessage(ChatColor.RED + "Utilisation incorrecte. Utilisez /teaminvite <nom_de_l'équipe> <pseudo_du_joueur_à_inviter>");
             return true;
         }
@@ -108,6 +108,12 @@ public class CmdManager {
             sender.sendMessage(ChatColor.RED + "Le joueur spécifié n'est pas en ligne.");
             return true;
         }
+
+        if (!team.getInvitedList().contains(targetPlayer)) {team.getInvitedList().add(targetPlayer);}
+        targetPlayer.sendMessage(ChatColor.BLUE + "Vous avez été invité à rejoindre l'équipe " + ChatColor.YELLOW + team.getName() + ChatColor.BLUE +  ". Faites :\n"
+                + ChatColor.YELLOW + "/teamaccept "+ team.getName() + ChatColor.BLUE + " pour accepter."
+                + ChatColor.YELLOW + "/teamrefuse "+ team.getName() + ChatColor.BLUE + " pour refuser.");
+        sender.sendMessage(ChatColor.BLUE + "Invitation envoyée.");
         return true;
     }
 

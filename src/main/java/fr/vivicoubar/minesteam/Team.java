@@ -35,6 +35,10 @@ public class Team {
         return secondList;
     }
 
+    public ArrayList<Player> getInvitedList() {
+        return invitedList;
+    }
+
     /**
      * makes the player "player" a second of the team
      *

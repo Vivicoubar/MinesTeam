@@ -20,6 +20,8 @@ public final class MinesTeam extends JavaPlugin {
         this.getCommand("inviteteam").setExecutor(this);
         this.getCommand("teamaddsecond").setExecutor(this);
         this.getCommand("teamremovesecond").setExecutor(this);
+        this.getCommand("teamaccept").setExecutor(this);
+        this.getCommand("teamrefuse").setExecutor(this);
         //loadTeams();
     }
 
@@ -45,6 +47,12 @@ public final class MinesTeam extends JavaPlugin {
         }
         if (command.getName().equalsIgnoreCase("teaminvite")) {
             return CmdManager.teaminvite(sender, command, label, args);
+        }
+        if (command.getName().equalsIgnoreCase("teamaccept")) {
+            return CmdManager.teamaccept(sender, command, label, args);
+        }
+        if (command.getName().equalsIgnoreCase("teamrefuse")) {
+            return CmdManager.teamrefuse(sender, command, label, args);
         }
 
         //TODO : envoi d'une demande au joueur cible. Il doit accepter avec une commande (ou refuser)
