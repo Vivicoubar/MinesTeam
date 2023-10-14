@@ -1,5 +1,6 @@
 package fr.vivicoubar.minesteam;
 
+import commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MinesTeam extends JavaPlugin {
@@ -7,18 +8,19 @@ public final class MinesTeam extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        this.getCommand("teamcreate").setExecutor(this);
-        this.getCommand("inviteteam").setExecutor(this);
-        this.getCommand("teamaddsecond").setExecutor(this);
-        this.getCommand("teamremovesecond").setExecutor(this);
-        this.getCommand("teamaccept").setExecutor(this);
-        this.getCommand("teamrefuse").setExecutor(this);
-        this.getCommand("teamleave").setExecutor(this);
-        this.getCommand("teamsetleader").setExecutor(this);
-        this.getCommand("teamchat").setExecutor(this);
+        this.getCommand("teamcreate").setExecutor(new Teamcreate());
+        this.getCommand("teaminvite").setExecutor(new Teaminvite());
+        this.getCommand("teamaddsecond").setExecutor(new Teamaddsecond());
+        this.getCommand("teamremovesecond").setExecutor(new Teamremovesecond());
+        this.getCommand("teamaccept").setExecutor(new Teamaccept());
+        this.getCommand("teamrefuse").setExecutor(new Teamrefuse());
+        this.getCommand("teamleave").setExecutor(new Teamleave());
+        this.getCommand("teamdelete").setExecutor(new Teamdelete());
+        this.getCommand("teamsetleader").setExecutor(new Teamsetleader());
+        this.getCommand("tchat").setExecutor(new Tchat());
+        System.out.println("MinesTeam working well");
 
-        PlayerListener playerListener = new PlayerListener();
-        getServer().getPluginManager().registerEvents(playerListener, this);
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this);
 
         //loadTeams();
     }

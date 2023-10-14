@@ -19,6 +19,7 @@ public class Teamdelete implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "Utilisation incorrecte. Utilisez /teamdelete <nom_de_l'équipe>");
                 return true;
             }
+
             Player leader = (Player) sender;
             Team team = TeamManager.getTeams().get(args[0]);
 

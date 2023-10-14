@@ -39,8 +39,8 @@ public class Teamcreate implements CommandExecutor {
 
             Team team = new Team(teamName, leader);
             TeamManager.getTeams().put(teamName, team);
-            team.addSecond(leader, leader); // Le chef est aussi un sous-chef
             sender.sendMessage(ChatColor.GREEN + "L'équipe " + teamName + " a été créée avec succès. Le leader est " + leader.getName() + ".");
+            team.getSecondList().add(leader); // Le chef est aussi un sous-chef. On utilise pas la fonction de Team car sinon un message est envoyé...
             return true;
         }
         return false;

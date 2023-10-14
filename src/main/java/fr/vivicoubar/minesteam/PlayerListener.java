@@ -20,12 +20,13 @@ public class PlayerListener implements Listener {
         Team team = TeamManager.getTeamByPlayer(sender);
         String formattedMessage;
         if(team != null) {
-            formattedMessage = ChatColor.YELLOW + "[" + team.getName() + "] " + ChatColor.WHITE + playerName + ": " + message;
+            formattedMessage = ChatColor.YELLOW + "[" + team.getName() + "] " + ChatColor.WHITE + playerName + " : " + message;
         }
         else {
-            formattedMessage = playerName + ": " + message;
+            formattedMessage = playerName + " : " + message;
         }
         event.setMessage(formattedMessage);
+        event.setFormat(event.getMessage());
     }
 
 }

@@ -16,7 +16,7 @@ public class Teamremovesecond implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, Command command,@NotNull String label,@NotNull String[] args) {
 
         if (command.getName().equalsIgnoreCase("teamremovesecond")) {
-            if (args.length != 2) { // Nombre d'arguments rentrés incorrect
+            if (args.length != 1) { // Nombre d'arguments rentrés incorrect
                 sender.sendMessage(ChatColor.RED + "Utilisation incorrecte. Utilisez /teamremovesecond <nom_du_joueur>");
                 return true;
             }

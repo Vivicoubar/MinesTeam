@@ -2,3 +2,34 @@ name: MinesTeam
 version: '${project.version}'
 main: fr.vivicoubar.minesteam.MinesTeam
 api-version: '1.20'
+commands:
+  teamcreate:
+    description: creates a team
+    usage: /teaminvite <pseudo_du_joueur_à_inviter>
+  teamaddsecond:
+    description: add a second to a team
+    usage: /<command>
+  tchat:
+    description: to chat with our team
+    usage: /teaminvite <pseudo_du_joueur_à_inviter>
+  teamaccept:
+    description: to join a team
+    usage: /<command>
+  teamdelete:
+    description: to delete a team
+    usage: /<command>
+  teaminvite:
+    description: to invite someone to a team
+    usage: /<command>
+  teamleave:
+    description: to leave our team
+    usage: /<command>
+  teamrefuse:
+    description: to do not join a team
+    usage: /<command>
+  teamremovesecond:
+    description: to remove someone of the second's list of a team
+    usage: /<command>
+  teamsetleader:
+    description: to change the leader of a team
+    usage: /<command>
