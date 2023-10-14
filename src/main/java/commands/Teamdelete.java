@@ -26,8 +26,11 @@ public class Teamdelete implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "Vous n'êtes pas le chef de cette équipe !");
                 return true;
             }
+            String message = ChatColor.DARK_RED + "L'équipe " + ChatColor.DARK_BLUE + team.getName() + ChatColor.DARK_RED + " est désormais supprimée." +
+                    "\nVous n'avez alors plus d'équipe.";
+            team.tellToEveryone(message);
             TeamManager.getTeams().remove(team.getName());
-            sender.sendMessage(ChatColor.BLUE + "L'équipe a bien été supprimée ! Tous les membres sont désormais sans équipe.");
+
             return true;
         }
         return false;

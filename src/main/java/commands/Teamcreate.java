@@ -31,6 +31,11 @@ public class Teamcreate implements CommandExecutor {
                 leader.sendMessage(ChatColor.RED + "Une team avec ce nom existe déjà ! Changez de nom.");
                 return true;
             }
+            int maxLength = 30; // just in case...
+            if (teamName.length() > maxLength) {
+                leader.sendMessage(ChatColor.RED + "Ce nom est trop long ! Changez de nom (maximum 30 caractères).");
+                return true;
+            }
 
             Team team = new Team(teamName, leader);
             TeamManager.getTeams().put(teamName, team);

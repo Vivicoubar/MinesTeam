@@ -16,6 +16,22 @@ public class Teamaccept implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, Command command,@NotNull String label,@NotNull String[] args) {
 
         if (command.getName().equalsIgnoreCase("teamaccept")) {
+
+            if (args.length != 1) { // Nombre d'arguments rentrés incorrect
+                sender.sendMessage(ChatColor.RED + "Utilisation incorrecte. Utilisez /teamaccept <nom_de_l'équipe>");
+                return true;
+            }
+
+            Player invitedPlayer = (Player) sender;
+            Team team = TeamManager.getTeams().get(args[0]);
+
+            if (team == null || !team.getInvitedList().contains(invitedPlayer)) {
+                sender.sendMessage(ChatColor.RED + "Vous n'avez pas été invité par cette équipe !");
+                return true;
+            }
+
+            team.addPlayer(invitedPlayer);
+            sender.sendMessage(ChatColor.GREEN + "Vous avez bien rejoint l'équipe " + ChatColor.YELLOW + team.getName() + ChatColor.GREEN + " !");
             return true;
         }
         return false;
